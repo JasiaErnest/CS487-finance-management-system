@@ -1,0 +1,82 @@
+QApplication {
+    background-color: #ffffff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, sans-serif;
+}
+
+QMainWindow {
+    background-color: #fafafa;
+}
+
+QTabWidget {
+    background-color: #ffffff;
+}
+
+QWidget { /* The only thing that really matters */
+    background-color: #fffbd3;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, sans-serif;
+}
+
+QVBoxLayout, QHBoxLayout {
+    background-color: #4f772d;
+}
+
+QLabel {
+    font-size: 14px;
+    font-weight: bold;
+    color: #132a13;
+}
+
+QLineEdit {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+QPushButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #45a049;
+}
+
+QTableWidget {
+    border: 1px solid #31572c;
+    color: #132a13;
+    border-radius: 4px;
+}
+
+QTableWidget::item {
+    padding: 5px;
+}
+
+QComboBox {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+QDateEdit {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+QTextEdit {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+QMessageBox {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, sans-serif;
+}
+
+QCheckBox {
+    font-size: 14px;
+}

@@ -1,15 +1,11 @@
 import sys
 import os
 from PyQt6.QtWidgets import (
-    QApplication, QMainWindow, QTabWidget, QWidget, QVBoxLayout, QHBoxLayout,
-    QLabel, QLineEdit, QPushButton, QTableWidget, QTableWidgetItem, QComboBox,
-    QDateEdit, QTextEdit, QMessageBox, QCheckBox
+    QApplication, QMainWindow, QTabWidget, QLabel
 )
-from PyQt6.QtCore import QDate, Qt
+import PyQt6.QtGui as QtGui
 import sqlite3
-from datetime import datetime, timedelta
 import matplotlib.pyplot as plt
-from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 
 from pages.budget import budget
 from pages.financial import financial
@@ -23,6 +19,10 @@ class FinanceManagementSystem(QMainWindow):
         super().__init__()
         self.setWindowTitle("Finance Management System")
         self.setGeometry(100, 100, 1200, 800)
+
+        # Load and apply stylesheet
+        with open("components/styles.css", "r") as style:
+            self.setStyleSheet(style.read())
 
         # Initialize database
         self.init_database()

@@ -15,3 +15,10 @@ Technologies used: PyQt6, SQLite, Matplotlib
 1. Install dependencies: pip install PyQt6 matplotlib
 2. Run: python app.py
 
+## Colors
+~Evergreen #132a13
+~Hunter Green #31572c
+~Fern #4f772d
+~Palm Leaf #90a955
+~Lime Cream #ecf39e
+
