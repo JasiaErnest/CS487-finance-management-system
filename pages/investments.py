@@ -11,11 +11,15 @@ from datetime import datetime, timedelta
 class investments:
     def __init__(self, parent):
         self.parent = parent
-        self.tabs = parent.tabs
         self.conn = parent.conn
+        self.widget = None
+    
+    def get_widget(self):
+        """Return the investment tracking widget"""
+        return self.widget
     
     def create_investment_tracking_tab(self):
-        widget = QWidget()
+        self.widget = QWidget()
         layout = QVBoxLayout()
 
         # Add Investment
@@ -50,8 +54,7 @@ class investments:
         layout.addWidget(self.inv_canvas)
         self.plot_investments()
 
-        widget.setLayout(layout)
-        self.tabs.addTab(widget, "Investment Tracking")
+        self.widget.setLayout(layout)
 
     def add_investment(self):
         try:

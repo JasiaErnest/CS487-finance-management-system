@@ -7,11 +7,15 @@ from PyQt6.QtWidgets import (
 class financialHealth:
     def __init__(self, parent):
         self.parent = parent
-        self.tabs = parent.tabs
         self.conn = parent.conn
+        self.widget = None
+    
+    def get_widget(self):
+        """Return the financial health widget"""
+        return self.widget
     
     def create_financial_health_tab(self):
-        widget = QWidget()
+        self.widget = QWidget()
         layout = QVBoxLayout()
 
         self.health_label = QLabel()
@@ -23,8 +27,7 @@ class financialHealth:
         layout.addWidget(self.insights_text)
         self.update_insights()
 
-        widget.setLayout(layout)
-        self.tabs.addTab(widget, "Financial Health")
+        self.widget.setLayout(layout)
 
     def update_health(self):
         c = self.conn.cursor()
