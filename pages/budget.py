@@ -30,11 +30,7 @@ class budget:
         header_layout.setSpacing(8)
         
         title = QLabel("Monthly Budgets")
-        title_font = QFont()
-        title_font.setPointSize(24)
-        title_font.setBold(True)
-        title.setFont(title_font)
-        title.setStyleSheet("color: #1a1a1a;")
+        title.setStyleSheet("color: #31572c; font-family: Helvetica; font-size: 24px; font-weight: 600;")
         
         subtitle = QLabel("Plan your spending and track limits")
         subtitle_font = QFont()
@@ -84,8 +80,8 @@ class budget:
         add_btn.setStyleSheet("""
             QPushButton {
                 background-color: transparent;
-                color: #6366f1;
-                border: 2px dashed #6366f1;
+                color: #31662c;
+                border: 2px dashed #31662c;
                 border-radius: 12px;
                 padding: 40px 20px;
                 font-size: 14px;

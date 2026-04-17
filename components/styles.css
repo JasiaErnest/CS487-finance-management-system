@@ -1,26 +1,25 @@
 QApplication {
     background-color: #fafafa;
-    font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Bodoni MT', Helvetica, Verdana, Arial, sans-serif;
 }
 
-/*QMainWindow {
+QMainWindow {
     background-color: #31572c;
-}*/
+}
 
 QFont {
     color: #fafafa;
-    font: 'Cantarell';
 }
 
 QWidget {
     background-color: #31572c;
-    font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    font-family: 'Ubuntu', 'Cantarell', Helvetica, Verdana;
     border-radius: 5px;
-    border-color: #3d8b40;
 }
 
 QLabel {
     color: #fafafa;
+    font: 'Ubuntu';
 }
 
 QLineEdit {
@@ -35,9 +34,10 @@ QLineEdit:focus {
     border: 2px solid #4CAF50;
 }
 
+
 QPushButton {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #aacc00;
+    color: #666666;
     border: none;
     border-radius: 6px;
     padding: 8px 20px;
@@ -47,11 +47,13 @@ QPushButton {
 }
 
 QPushButton:hover {
-    background-color: #4CAF50;
+    background-color: #aacc00;
+    color:#666666
 }
 
 QPushButton:pressed {
-    background-color: #4CAF50;
+    background-color: #c6ed04;
+    color: #e5e7eb;
 }
 
 QTableWidget {
@@ -122,15 +124,22 @@ QTextEdit:focus {
 }
 
 QMessageBox {
-    font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    background-color: #fafafa;
+    font-family: 'Cantarell', Verdana, sans-serif;
+    color:#d0d0d0
 }
 
+/* Override the pop-up box text color */
 QMessageBox QLabel {
-    color: #1a1a1a;
+    background-color: transparent;
+    color: #31572c;
+    font-size: 12px;
+    font-weight: 500;
 }
 
 QCheckBox {
-    color: #1a1a1a;
+    background-color: #d0d0d0;
+    color: #e0e7ff;
     margin: 5px;
 }
 

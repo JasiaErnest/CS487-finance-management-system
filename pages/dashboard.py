@@ -24,11 +24,7 @@ class dashboard:
 
         header_layout = QVBoxLayout()
         title_label = QLabel("Financial Summary")
-        title_font = QFont()
-        title_font.setPointSize(24)
-        title_font.setBold(True)
-        title_label.setFont(title_font)
-        title_label.setStyleSheet("color: #1a1a1a;")
+        title_label.setStyleSheet("color: #31572c; font-family: Helvetica; font-size: 24px; font-weight: 600;")
 
         subtitle_label = QLabel("Real-time health monitoring & insights")
         subtitle_font = QFont()
@@ -48,13 +44,13 @@ class dashboard:
         monthly_spending = self.get_monthly_spending()
 
         balance_card = self.create_metric_card(
-            "Total Balance", f"${total_balance:.2f}", "#e0e7ff", "💳"
+            "Total Balance", f"${total_balance:.2f}", "#e0e7ff"
         )
         income_card = self.create_metric_card(
-            "Monthly Income", f"${monthly_income:.2f}", "#dcfce7", "📈"
+            "Monthly Income", f"${monthly_income:.2f}", "#dcfce7"
         )
         spending_card = self.create_metric_card(
-            "Monthly Spending", f"${monthly_spending:.2f}", "#fee2e2", "📉"
+            "Monthly Spending", f"${monthly_spending:.2f}", "#fee2e2"
         )
 
         cards_layout.addWidget(balance_card)
@@ -74,13 +70,12 @@ class dashboard:
         layout.addStretch()
         self.widget.setLayout(layout)
 
-    def create_metric_card(self, title, value, bg_color, icon):
+    def create_metric_card(self, title, value, bg_color):
         card = QFrame()
         card.setStyleSheet("""
             QFrame {
                 background-color: white;
                 border-radius: 8px;
-                border: 1px solid #e5e7eb;
             }
         """)
         card.setMinimumHeight(120)
@@ -88,10 +83,7 @@ class dashboard:
         layout.setContentsMargins(20, 20, 20, 20)
         layout.setSpacing(10)
 
-        header_layout = QHBoxLayout()
-        icon_label = QLabel(icon)
-        icon_label.setStyleSheet(f"background-color: {bg_color}; border-radius: 8px; padding: 10px; font-size: 20px;")
-        icon_label.setMaximumWidth(50)
+        header_layout = QHBoxLayout()\
 
         title_label = QLabel(title)
         title_font = QFont()
@@ -99,8 +91,6 @@ class dashboard:
         title_label.setFont(title_font)
         title_label.setStyleSheet("color: #666666;")
 
-        header_layout.addWidget(icon_label)
-        header_layout.addSpacing(10)
         header_layout.addWidget(title_label)
         header_layout.addStretch()
 
@@ -121,7 +111,7 @@ class dashboard:
         card = QFrame()
         card.setStyleSheet("""
             QFrame {
-                background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #4f46e5, stop:1 #7c3aed);
+                background-color: #31662c;
                 border-radius: 12px;
                 color: white;
             }

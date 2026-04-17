@@ -1,5 +1,5 @@
 from PyQt6.QtWidgets import (
-    QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, 
+    QApplication, QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, 
     QTableWidget, QTableWidgetItem, QMessageBox, QScrollArea
 )
 from PyQt6.QtCore import QDate, Qt, QSize
@@ -20,7 +20,7 @@ class financial:
 
     def create_financial_tracking_tab(self):
         self.widget = QWidget()
-        self.widget.setStyleSheet("background-color: #f5f5f5;")
+        self.widget.setStyleSheet("background-color: #f9f9f9;")
         layout = QVBoxLayout()
         layout.setContentsMargins(40, 30, 40, 30)
         layout.setSpacing(20)
@@ -28,30 +28,12 @@ class financial:
         # Header with title
         header_layout = QHBoxLayout()
         title = QLabel("Transactions")
-        title_font = QFont()
-        title_font.setPointSize(24)
-        title_font.setBold(True)
-        title.setFont(title_font)
-        title.setStyleSheet("color: #1a1a1a;")
+        title.setStyleSheet("color: #31572c; font-family: Helvetica; font-weight: 700; font-size: 24px;")
         
         header_layout.addWidget(title)
         header_layout.addStretch()
         
         add_btn = QPushButton("+ Add Entry")
-        add_btn.setStyleSheet("""
-            QPushButton {
-                background-color: #aacc00;
-                color: white;
-                border: none;
-                border-radius: 8px;
-                padding: 10px 24px;
-                font-size: 14px;
-                font-weight: 600;
-            }
-            QPushButton:hover {
-                background-color: ##88cc00;
-            }
-        """)
         add_btn.setCursor(Qt.CursorShape.PointingHandCursor)
         add_btn.clicked.connect(self.show_add_transaction_dialog)
         header_layout.addWidget(add_btn)
@@ -63,7 +45,7 @@ class financial:
         search_filter_layout.setSpacing(15)
         
         search = QLineEdit()
-        search.setPlaceholderText("🔍 Search merchants or notes...")
+        search.setPlaceholderText("Search category...")
         search.setStyleSheet("""
             QLineEdit {
                 border: 1px solid #e5e7eb;
@@ -132,14 +114,13 @@ class financial:
         self.trans_table.setColumnCount(5)
         self.trans_table.setHorizontalHeaderLabels(["DATE", "MERCHANT / NOTES", "CATEGORY", "AMOUNT", ""])
         self.trans_table.horizontalHeader().setStretchLastSection(False)
-        self.trans_table.setColumnWidth(0, 100)
-        self.trans_table.setColumnWidth(1, 250)
-        self.trans_table.setColumnWidth(2, 150)
-        self.trans_table.setColumnWidth(3, 150)
+        self.trans_table.setColumnWidth(0, 197)
+        self.trans_table.setColumnWidth(1, 300)
+        self.trans_table.setColumnWidth(2, 200)
+        self.trans_table.setColumnWidth(3, 200)
         self.trans_table.setColumnWidth(4, 40)
         self.load_transactions()
         layout.addWidget(self.trans_table)
-
         layout.addStretch()
         self.widget.setLayout(layout)
 

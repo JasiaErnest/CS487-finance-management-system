@@ -6,6 +6,7 @@ from PyQt6.QtWidgets import (
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from PyQt6.QtCore import QDate, Qt
+from PyQt6.QtGui import QFont
 from datetime import datetime, timedelta
 
 class investments:
@@ -20,7 +21,24 @@ class investments:
     
     def create_investment_tracking_tab(self):
         self.widget = QWidget()
+        self.widget.setStyleSheet("background-color: #f9f9f9;")
+
         layout = QVBoxLayout()
+        layout.setContentsMargins(40, 30, 40, 30)
+        layout.setSpacing(20)
+
+        # Header
+        title = QLabel("Investments")
+        title.setStyleSheet("color: #31572c; font-family: Helvetica; font-size: 24px; font-weight: 600;")
+        
+        subtitle = QLabel("Manage your investment portfolio")
+        subtitle_font = QFont()
+        subtitle_font.setPointSize(11)
+        subtitle.setFont(subtitle_font)
+        subtitle.setStyleSheet("color: #666666;")
+        
+        layout.addWidget(title)
+        layout.addWidget(subtitle)
 
         # Add Investment
         add_layout = QHBoxLayout()
@@ -29,16 +47,24 @@ class investments:
         self.inv_rate = QLineEdit()
         self.inv_date = QDateEdit()
         self.inv_date.setDate(QDate.currentDate())
-        add_inv_btn = QPushButton("Add Investment")
+        add_inv_btn = QPushButton("+ Add Investment")
         add_inv_btn.clicked.connect(self.add_investment)
 
-        add_layout.addWidget(QLabel("Name:"))
+        name = QLabel("Name:")
+        name.setStyleSheet("color: #666666; font-family: 'Cantarell'; font-size: 14px; font-weight: 500;")
+        add_layout.addWidget(name)
         add_layout.addWidget(self.inv_name)
-        add_layout.addWidget(QLabel("Initial Amount:"))
+        initial_amount = QLabel("Initial Amount:")
+        initial_amount.setStyleSheet("color: #666666; font-family: 'Cantarell'; font-size: 14px; font-weight: 500;")
+        add_layout.addWidget(initial_amount)
         add_layout.addWidget(self.inv_amt)
-        add_layout.addWidget(QLabel("Rate (%):"))
+        rate = QLabel("Rate (%):")
+        rate.setStyleSheet("color: #666666; font-family: 'Cantarell'; font-size: 14px; font-weight: 500;")
+        add_layout.addWidget(rate)
         add_layout.addWidget(self.inv_rate)
-        add_layout.addWidget(QLabel("Date:"))
+        date_label = QLabel("Date:")
+        date_label.setStyleSheet("color: #666666; font-family: 'Cantarell'; font-size: 14px; font-weight: 500;")
+        add_layout.addWidget(date_label)
         add_layout.addWidget(self.inv_date)
         add_layout.addWidget(add_inv_btn)
         layout.addLayout(add_layout)

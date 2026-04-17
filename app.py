@@ -21,7 +21,7 @@ class FinanceManagementSystem(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("FM - Financial Management System")
-        self.setGeometry(100, 100, 1400, 900)
+        self.setGeometry(100, 100, 1200, 700)
 
         # Load and apply stylesheet
         with open("components/styles.css", "r") as style:
@@ -72,12 +72,6 @@ class FinanceManagementSystem(QMainWindow):
     def create_sidebar(self):
         """Create sidebar navigation"""
         sidebar_widget = QWidget()
-        sidebar_widget.setStyleSheet("""
-            QWidget {
-                background-color: #aacc00;
-                border-radius: 5px;
-            }
-        """)
         sidebar_widget.setMaximumWidth(220)
         
         sidebar_layout = QVBoxLayout()
@@ -90,7 +84,8 @@ class FinanceManagementSystem(QMainWindow):
         logo_font.setPointSize(18)
         logo_font.setBold(True)
         logo_label.setFont(logo_font)
-        logo_label.setStyleSheet("color: #fafafa; padding: 10px 20px; font-family: 'Ultra'; font-weight: 700;")
+        logo_label.setStyleSheet("color: #fafafa; padding: 10px 20px; font-family: 'Ubuntu', 'Trebuchet MS' ; font-weight: 700;")
+        logo_label.setAlignment(Qt.AlignmentFlag.AlignTop)
         subtitle_font = QFont()
         subtitle_font.setPointSize(8)
         sidebar_layout.addWidget(logo_label)

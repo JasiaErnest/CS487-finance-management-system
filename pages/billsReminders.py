@@ -26,12 +26,8 @@ class bills_reminders:
         layout.setSpacing(20)
 
         # Header
-        title = QLabel("Recurring Bills")
-        title_font = QFont()
-        title_font.setPointSize(24)
-        title_font.setBold(True)
-        title.setFont(title_font)
-        title.setStyleSheet("color: #1a1a1a;")
+        title = QLabel("Bills")
+        title.setStyleSheet("color: #31572c; font-family: Helvetica; font-size: 24px; font-weight: 600;")
         
         subtitle = QLabel("Manage subscriptions and automated payments")
         subtitle_font = QFont()
